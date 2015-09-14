@@ -402,7 +402,7 @@ public class Loggly {
         mLogQueue.offer(jsonObject);
     }
     
-    public void log(int priority, String tag, String message, Throwable t) {
+    public static void log(int priority, String tag, String message, Throwable t) {
         log(tag, message, String.valueOf(priority), System.currentTimeMillis());
     }
 
