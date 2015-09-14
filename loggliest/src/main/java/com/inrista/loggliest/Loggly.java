@@ -401,6 +401,10 @@ public class Loggly {
         
         mLogQueue.offer(jsonObject);
     }
+    
+    public void log(int priority, String tag, String message, Throwable t) {
+        log(tag, message, String.valueOf(priority), System.currentTimeMillis());
+    }
 
     private static void log(String key, Object msg, String level, long time) {
         JSONObject json = new JSONObject();
